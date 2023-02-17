@@ -198,10 +198,13 @@ public class UPSboxes {
 
         System.out.println("Your item (with 2 inch leeway) is " + itemX + "x" + itemY + "x" + itemZ);
 
+        //finds correct box
         Box winner = findBox(itemX, itemY, itemZ, possibleBoxes);
+        //failsafe for edge cases
         if(winner.name == "N/A"){
             System.out.println("We do not have a box this size");
         }
+        //final answer
         else{
             System.out.println("The most efficient box is a " + winner.name + " " + winner.type);
             if(winner.cutDown == true){
